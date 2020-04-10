@@ -1,18 +1,11 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="white"
-      elevate-on-scroll
-    >
-      <div class="d-flex align-center">
-        Story Gallery
-      </div>
+    <app-bar @showDrawer="showDrawer = true"></app-bar>
 
-      <v-spacer></v-spacer>
-
-      <app-navigation></app-navigation>
-    </v-app-bar>
+    <sidebar-navigation
+      v-if="!$_isSmAndUp"
+      v-model="showDrawer"
+    ></sidebar-navigation>
 
     <v-content>
       <router-view></router-view>
@@ -21,10 +14,22 @@
 </template>
 
 <script>
-import AppNavigation from '@/components/AppNavigation.vue';
+import AppBar from '@/components/AppBar.vue';
+import SidebarNavigation from '@/components/navigation/SidebarNavigation.vue';
+
+import displayMixin from '@/mixins/display-mixin';
 
 export default {
   name: 'App',
-  components: { AppNavigation },
+  mixins: [displayMixin],
+  components: {
+    AppBar,
+    SidebarNavigation,
+  },
+  data() {
+    return {
+      showDrawer: false,
+    };
+  },
 };
 </script>
