@@ -1,4 +1,4 @@
-# project-jade
+# Story Gallery
 
 ## Project setup
 ```
