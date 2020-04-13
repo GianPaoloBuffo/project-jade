@@ -2,20 +2,17 @@
   <v-app>
     <app-bar @showDrawer="showDrawer = true"></app-bar>
 
-    <sidebar-navigation
-      v-if="!$_isSmAndUp"
-      v-model="showDrawer"
-    ></sidebar-navigation>
-
     <v-content>
       <router-view></router-view>
     </v-content>
+
+    <mobile-navigation v-if="!$_isSmAndUp"></mobile-navigation>
   </v-app>
 </template>
 
 <script>
 import AppBar from '@/components/AppBar.vue';
-import SidebarNavigation from '@/components/navigation/SidebarNavigation.vue';
+import MobileNavigation from '@/components/navigation/SidebarNavigation.vue';
 
 import displayMixin from '@/mixins/display-mixin';
 
@@ -24,7 +21,7 @@ export default {
   mixins: [displayMixin],
   components: {
     AppBar,
-    SidebarNavigation,
+    MobileNavigation,
   },
   data() {
     return {

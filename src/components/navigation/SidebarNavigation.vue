@@ -1,39 +1,24 @@
 <template>
-  <v-navigation-drawer
-    :value="value"
-    @input="$emit('input', $event)"
-    absolute
-    temporary
-  >
-    <v-list nav dense>
-      <v-subheader>Story Gallery</v-subheader>
-      <v-divider></v-divider>
+  <v-bottom-navigation grow>
+    <v-btn :to="{ name: 'Artists' }">
+      <span>Artists</span>
+      <v-icon>mdi-palette</v-icon>
+    </v-btn>
 
-      <v-list-item-group>
-        <v-list-item :to="{ name: 'Profile' }">
-          <v-list-item-title>Me</v-list-item-title>
-        </v-list-item>
+    <v-btn :to="{ name: 'Profile' }">
+      <span>Me</span>
+      <v-icon>mdi-account</v-icon>
+    </v-btn>
 
-        <v-list-item :to="{ name: 'Artists' }">
-          <v-list-item-title>Artists</v-list-item-title>
-        </v-list-item>
-
-        <v-list-item :to="{ name: 'Buyers' }">
-          <v-list-item-title>Buyers</v-list-item-title>
-        </v-list-item>
-      </v-list-item-group>
-    </v-list>
-  </v-navigation-drawer>
+    <v-btn :to="{ name: 'Buyers' }">
+      <span>Buyers</span>
+      <v-icon>mdi-wallet-giftcard</v-icon>
+    </v-btn>
+  </v-bottom-navigation>
 </template>
 
 <script>
 export default {
-  name: 'SidebarNavigation',
-  props: {
-    value: {
-      type: Boolean,
-      required: true,
-    },
-  },
+  name: 'MobileNavigation',
 };
 </script>

@@ -4,12 +4,6 @@
     color="white"
     elevate-on-scroll
   >
-    <v-app-bar-nav-icon
-      v-if="!$_isSmAndUp"
-      @click="$emit('showDrawer')"
-    ></v-app-bar-nav-icon>
-
-    <v-spacer v-if="!$_isSmAndUp"></v-spacer>
     <div class="d-flex align-center">Story Gallery</div>
 
     <template v-if="$_isSmAndUp">
