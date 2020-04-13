@@ -12,7 +12,7 @@
 
 <script>
 import AppBar from '@/components/AppBar.vue';
-import MobileNavigation from '@/components/navigation/SidebarNavigation.vue';
+import MobileNavigation from '@/components/navigation/MobileNavigation.vue';
 
 import displayMixin from '@/mixins/display-mixin';
 
