@@ -1,5 +1,5 @@
 <template>
-  <v-bottom-navigation grow>
+  <v-bottom-navigation fixed grow>
     <v-btn :to="{ name: 'Artists' }">
       <span>Artists</span>
       <v-icon>mdi-palette</v-icon>
